@@ -1,0 +1,11 @@
+@import "../scss/variables";
+@import "../scss/mixins";
+
+.header {
+  background-color: $colorYellowMain;
+  padding: rem(12) 0;
+}
+
+.header__wrapper {
+  gap: rem(80);
+}

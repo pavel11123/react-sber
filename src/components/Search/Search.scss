@@ -1,0 +1,33 @@
+@import "../scss/mixins";
+
+.search__form {
+  background: #ffffff;
+  border-radius: rem(24);
+  -webkit-border-radius: rem(24);
+  -moz-border-radius: rem(24);
+  -ms-border-radius: rem(24);
+  -o-border-radius: rem(24);
+  padding: rem(14) rem(20);
+  max-width: rem(470);
+  flex: 1 1 auto;
+  justify-content: space-between;
+  align-self: center;
+}
+
+.search__input {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 400;
+  font-size: rem(16);
+  line-height: rem(20);
+  color: #1a1a1a;
+}
+
+.search__btn {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 400;
+  font-size: rem(16);
+  line-height: rem(20);
+  color: #1a1a1a;
+}

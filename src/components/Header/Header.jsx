@@ -1,9 +1,11 @@
 import "./Header.scss";
 
-function Header() {
+function Header({ children }) {
   return (
     <header className="header">
-      <p>Header</p>
+      <div className="header__container">
+        <div className="header__wrapper d-fl">{children}</div>
+      </div>
     </header>
   );
 }
