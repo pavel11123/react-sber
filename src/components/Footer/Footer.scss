@@ -1,0 +1,8 @@
+@import "../scss/variables";
+@import "../scss/mixins";
+
+.footer {
+  background-color: $colorYellowMain;
+  flex: 0 0 auto;
+  padding: rem(40) 0;
+}

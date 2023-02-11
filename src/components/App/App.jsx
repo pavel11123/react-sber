@@ -6,14 +6,16 @@ import "./App.scss";
 
 function App() {
   return (
-    <div className="wrapper">
+    <>
       <Header>
         <Logo />
         <Search />
       </Header>
       <main className="main"></main>
-      <Footer />
-    </div>
+      <Footer>
+        <Logo />
+      </Footer>
+    </>
   );
 }
 
