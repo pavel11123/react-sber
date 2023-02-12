@@ -1,0 +1,125 @@
+@import "../scss/variables";
+@import "../scss/mixins";
+
+.card {
+  position: relative;
+  max-width: rem(236);
+  gap: rem(16);
+
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+
+  &:hover .card__img {
+    transform: scale(1.02);
+    -webkit-transform: scale(1.02);
+    -moz-transform: scale(1.02);
+    -ms-transform: scale(1.02);
+    -o-transform: scale(1.02);
+  }
+}
+
+.card__discount {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  padding: rem(2) rem(8);
+  background: #f44336;
+  border-radius: rem(20);
+  -webkit-border-radius: rem(20);
+  -moz-border-radius: rem(20);
+  -ms-border-radius: rem(20);
+  -o-border-radius: rem(20);
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 800;
+  font-size: rem(16);
+  line-height: rem(20);
+  color: #ffffff;
+}
+
+.card__favourite {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  width: rem(24);
+  height: rem(24);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.card__img {
+  position: relative;
+  padding: 0 0 80% 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+
+.card__content {
+  flex: 1 1 auto;
+}
+
+.card__price {
+  &-old,
+  &-new {
+    font-family: "Nunito";
+    font-style: normal;
+  }
+
+  &-old {
+    font-weight: 600;
+    font-size: rem(12);
+    line-height: rem(14);
+    text-decoration-line: line-through;
+    color: #1a1a1a;
+  }
+
+  &-new {
+    font-weight: 800;
+    font-size: rem(20);
+    line-height: rem(24);
+    color: #f44336;
+  }
+}
+
+.card__name,
+.card__quantity {
+  font-family: "Nunito";
+  font-style: normal;
+}
+
+.card__quantity {
+  padding: rem(6) 0 rem(2) 0;
+  font-weight: 400;
+  font-size: rem(12);
+  line-height: rem(14);
+  color: #7b8e98;
+}
+
+.card__name {
+  font-weight: 600;
+  font-size: rem(16);
+  line-height: rem(20);
+  color: $colorBlackFont;
+}

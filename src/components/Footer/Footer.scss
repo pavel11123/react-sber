@@ -6,3 +6,54 @@
   flex: 0 0 auto;
   padding: rem(40) 0;
 }
+
+.footer__wrapper {
+  justify-content: space-between;
+  gap: rem(20);
+}
+
+.footer__block-list {
+}
+
+.footer__block-nav {
+}
+
+.footer__nav-list {
+  gap: rem(19);
+}
+
+.footer__nav-item {
+}
+
+.footer__block-info--title,
+.footer__block-info--phone,
+.footer__block-info--email,
+.footer__nav-link {
+  font-family: "Nunito";
+  font-style: normal;
+  color: $colorBlackFont;
+}
+
+.footer__nav-link {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.footer__block-info {
+  gap: rem(16);
+}
+
+.footer__block-info--title,
+.footer__block-info--phone {
+  font-weight: 700;
+  font-size: rem(16);
+  line-height: rem(20);
+}
+
+.footer__block-info--email {
+  font-weight: 400;
+  font-size: rem(12);
+  line-height: rem(14);
+  padding-top: rem(5);
+}

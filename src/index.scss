@@ -24,3 +24,13 @@
 .main {
   flex: 1 1 auto;
 }
+
+.section__product {
+  padding: rem(40) 0 rem(60) 0;
+}
+
+.card__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(rem(200), 1fr));
+  gap: rem(16);
+}

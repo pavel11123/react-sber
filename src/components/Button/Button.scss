@@ -1,0 +1,28 @@
+@import "../scss/variables";
+@import "../scss/mixins";
+
+.card__button {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 700;
+  font-size: rem(16);
+  line-height: rem(20);
+  color: $colorBlackFont;
+  background: $colorYellowMain;
+  border-radius: rem(55);
+  -webkit-border-radius: rem(55);
+  -moz-border-radius: rem(55);
+  -ms-border-radius: rem(55);
+  -o-border-radius: rem(55);
+  padding: rem(10) rem(18);
+  align-self: flex-start;
+
+  &:hover {
+    background: #ffdc14;
+  }
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
