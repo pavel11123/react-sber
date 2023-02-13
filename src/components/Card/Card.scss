@@ -39,6 +39,10 @@
   font-size: rem(16);
   line-height: rem(20);
   color: #ffffff;
+
+  &-none {
+    display: none;
+  }
 }
 
 .card__favourite {

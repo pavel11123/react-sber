@@ -2,7 +2,7 @@ import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import Logo from "../Logo/Logo";
 import Search from "../Search/Search";
-import Card from "../Card/Card";
+import CardList from "../CardList/CardList";
 import "./App.scss";
 
 function App() {
@@ -14,10 +14,8 @@ function App() {
       </Header>
       <main className="main">
         <section className="section__product">
-          <div className="card__container">
-            <div className="card__list">
-              <Card />
-            </div>
+          <div className="product__container">
+            <CardList />
           </div>
         </section>
       </main>
