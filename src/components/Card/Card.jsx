@@ -15,8 +15,6 @@ function Card({
   picture,
   tags,
 }) {
-  // console.log(data);
-
   return (
     <div className="card d-fl-col">
       <span className={discount > 0 ? "card__discount" : "card__discount-none"}>

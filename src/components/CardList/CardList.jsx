@@ -1,13 +1,10 @@
 import "./CardList.scss";
 import Card from "../Card/Card";
-import data from "../../assets/data.json";
 
-const CardList = () => {
-  //   console.log(data);
-
+const CardList = ({ cards }) => {
   return (
     <div className="card__list">
-      {data.map((el) => {
+      {cards.map((el) => {
         return <Card key={el.name} {...el} />;
       })}
     </div>
