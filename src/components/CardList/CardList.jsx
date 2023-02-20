@@ -5,7 +5,7 @@ const CardList = ({ cards }) => {
   return (
     <div className="card__list">
       {cards.map((el) => {
-        return <Card key={el.name} {...el} />;
+        return <Card key={el._id} {...el} />;
       })}
     </div>
   );

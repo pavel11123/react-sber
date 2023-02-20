@@ -12,7 +12,7 @@ function Card({
   isCart,
   available,
   stock,
-  picture,
+  pictures,
   tags,
 }) {
   return (
@@ -25,7 +25,7 @@ function Card({
       </div>
 
       <div className="card__img">
-        <img src={picture} alt="product" />
+        <img src={pictures} alt="product" />
       </div>
 
       <div className="card__content">

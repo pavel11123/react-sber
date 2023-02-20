@@ -5,26 +5,38 @@ import Search from "../Search/Search";
 import CardList from "../CardList/CardList";
 import "./App.scss";
 import { useEffect, useState } from "react";
-import data from "../../assets/data.json";
+// import data from "../../assets/data.json";
+import api from "../../utils/api";
 
 function App() {
-  const [cards, setCards] = useState(data);
+  // const [cards, setCards] = useState(data);
+  const [cards, setCards] = useState([]);
+  const [currentUser, setCurrentUser] = useState(null);
   const [searchQuery, setsearchQuery] = useState("");
 
   useEffect(() => {
-    handleRequest();
-  }, [searchQuery]);
-
-  function handleRequest() {
-    const filterCard = data.filter((item) =>
-      item.name.toUpperCase().includes(searchQuery.toUpperCase())
+    Promise.all([api.getUserInfo(), api.getProductList()]).then(
+      ([userData, cardData]) => {
+        setCurrentUser(userData);
+        setCards(cardData.products);
+      }
     );
-    setCards(filterCard);
-  }
+  }, []);
+
+  // useEffect(() => {
+  //   handleRequest();
+  // }, [searchQuery]);
+
+  // function handleRequest() {
+  //   const filterCard = data.filter((item) =>
+  //     item.name.toUpperCase().includes(searchQuery.toUpperCase())
+  //   );
+  //   setCards(filterCard);
+  // }
 
   function handleFormSubmit(e) {
     e.preventDefault();
-    handleRequest();
+    // handleRequest();
   }
 
   console.log(searchQuery);
