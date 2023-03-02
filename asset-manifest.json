@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/react-sber/static/css/main.63b6673c.css",
+    "main.js": "/react-sber/static/js/main.2e41c23a.js",
+    "static/media/logoDog.svg": "/react-sber/static/media/logoDog.dbe97242d7f7c4f11494d2e62c67e332.svg",
+    "static/media/logo-instagram.svg": "/react-sber/static/media/logo-instagram.ee343c224c183f85022c39390295aaf3.svg",
+    "static/media/logo-viber.svg": "/react-sber/static/media/logo-viber.8790bba30363d7d297a7894549e53697.svg",
+    "static/media/profile.svg": "/react-sber/static/media/profile.2ed0d460573b23b9e4b950369c51bca3.svg",
+    "static/media/logo-whatsapp.svg": "/react-sber/static/media/logo-whatsapp.43d4e7f7fe93a6479dc83471b3d5d957.svg",
+    "static/media/logo-vk.svg": "/react-sber/static/media/logo-vk.10a8eaae72b1edd421b5bc7a6c31d978.svg",
+    "static/media/favourite.svg": "/react-sber/static/media/favourite.8afe51a3c0478c39f05c6dc2649cd60b.svg",
+    "static/media/favourite-card.svg": "/react-sber/static/media/favourite-card.68063a1b96413e04610d9c99074c907b.svg",
+    "static/media/cart.svg": "/react-sber/static/media/cart.36351405bb13de945ab1f9699d66d925.svg",
+    "static/media/logo-telegram.svg": "/react-sber/static/media/logo-telegram.2a2a4f305d11945d1b16707abed4074a.svg",
+    "static/media/search.svg": "/react-sber/static/media/search.3bf12e732cb7f2edfa13ee4b0ea3eeeb.svg",
+    "index.html": "/react-sber/index.html",
+    "main.63b6673c.css.map": "/react-sber/static/css/main.63b6673c.css.map",
+    "main.2e41c23a.js.map": "/react-sber/static/js/main.2e41c23a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.63b6673c.css",
+    "static/js/main.2e41c23a.js"
+  ]
+}
