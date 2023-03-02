@@ -1,8 +1,9 @@
 import "./Card.scss";
-import favourite from "../../assets/img/icon/favourite-card.svg";
+import { ReactComponent as Save } from "../../assets/img/icon/favourite-card.svg";
+// import favourite from "../../assets/img/icon/favourite-card.svg";
 import Button from "../Button/Button";
 
-function Card({
+const Card = ({
   name,
   price,
   discount,
@@ -14,14 +15,27 @@ function Card({
   stock,
   pictures,
   tags,
-}) {
+  currentUser,
+  onProductLike,
+  likes,
+  _id,
+}) => {
+  const isLiked = likes.some((id) => id === currentUser?._id);
+  const handleLikeClick = () => {
+    onProductLike({ _id, likes });
+    console.log(_id, likes);
+  };
+
   return (
     <div className="card d-fl-col">
       <span className={discount > 0 ? "card__discount" : "card__discount-none"}>
         -{discount}%
       </span>
-      <div className="card__favourite">
-        <img src={favourite} alt="favourite" />
+      <div
+        className={isLiked ? "card__favourite_is-active" : "card__favourite"}
+        onClick={handleLikeClick}
+      >
+        <Save className="card__favourite-icon" />
       </div>
 
       <div className="card__img">
@@ -42,5 +56,5 @@ function Card({
       <Button />
     </div>
   );
-}
+};
 export default Card;

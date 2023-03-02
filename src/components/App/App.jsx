@@ -47,8 +47,6 @@ function App() {
     handleRequest();
   }
 
-  console.log(searchQuery);
-
   const handleInputChange = (inputValue) => {
     setsearchQuery(inputValue);
   };
@@ -56,6 +54,16 @@ function App() {
   const handleUpdateUser = (userUpdate) => {
     api.setUserInfo(userUpdate).then((newUserData) => {
       setCurrentUser(newUserData);
+    });
+  };
+
+  const handleProductLike = (product) => {
+    const isLiked = product.likes.some((id) => id === currentUser._id);
+    api.changeLikeProduct(product._id, isLiked).then((newCard) => {
+      const newCards = cards.map((card) => {
+        return card._id === newCard._id ? newCard : card;
+      });
+      setCards(newCards);
     });
   };
 
@@ -74,7 +82,11 @@ function App() {
 
         <section className="section__product">
           <div className="product__container">
-            <CardList cards={cards} />
+            <CardList
+              cards={cards}
+              onProductLike={handleProductLike}
+              currentUser={currentUser}
+            />
           </div>
         </section>
       </main>

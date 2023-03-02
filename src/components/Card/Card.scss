@@ -52,11 +52,28 @@
   z-index: 1;
   width: rem(24);
   height: rem(24);
+  cursor: pointer;
 
-  img {
+  svg {
     width: 100%;
     height: 100%;
     object-fit: contain;
+    fill: #ffffff;
+    stroke: #7b8e98;
+  }
+
+  &_is-active {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    width: rem(24);
+    height: rem(24);
+    cursor: pointer;
+
+    svg {
+      fill: #f44336;
+    }
   }
 }
 
