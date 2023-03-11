@@ -2,6 +2,7 @@ import "./Card.scss";
 import { ReactComponent as Save } from "../../assets/img/icon/favourite-card.svg";
 // import favourite from "../../assets/img/icon/favourite-card.svg";
 import Button from "../Button/Button";
+import { isLiked } from "../../utils/products";
 
 const Card = ({
   name,
@@ -20,7 +21,7 @@ const Card = ({
   likes,
   _id,
 }) => {
-  const isLiked = likes.some((id) => id === currentUser?._id);
+  const liked = isLiked(likes, currentUser?._id);
   const handleLikeClick = () => {
     onProductLike({ _id, likes });
     console.log(_id, likes);
@@ -32,7 +33,7 @@ const Card = ({
         -{discount}%
       </span>
       <div
-        className={isLiked ? "card__favourite_is-active" : "card__favourite"}
+        className={liked ? "card__favourite_is-active" : "card__favourite"}
         onClick={handleLikeClick}
       >
         <Save className="card__favourite-icon" />

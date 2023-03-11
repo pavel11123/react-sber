@@ -4,26 +4,33 @@ import Logo from "../Logo/Logo";
 import Search from "../Search/Search";
 import CardList from "../CardList/CardList";
 import SearchInfo from "../SearchInfo/SearchInfo";
+import { isLiked } from "../../utils/products";
 import "./App.scss";
 import { useEffect, useState } from "react";
 // import data from "../../assets/data.json";
 import api from "../../utils/api";
 import useDebounce from "../../hooks/useDebounce";
+import Spinner from "../Spinner/Spinner";
 
 function App() {
   // const [cards, setCards] = useState(data);
   const [cards, setCards] = useState([]);
   const [currentUser, setCurrentUser] = useState(null);
   const [searchQuery, setsearchQuery] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const debouncesearchQuery = useDebounce(searchQuery, 300);
 
   useEffect(() => {
+    setIsLoading(true);
     Promise.all([api.getUserInfo(), api.getProductList()])
       .then(([userData, cardData]) => {
         setCurrentUser(userData);
         setCards(cardData.products);
       })
-      .catch((err) => console.error(err));
+      .catch((err) => console.error(err))
+      .finally(() => {
+        setIsLoading(false);
+      });
   }, []);
 
   useEffect(() => {
@@ -58,8 +65,9 @@ function App() {
   };
 
   const handleProductLike = (product) => {
-    const isLiked = product.likes.some((id) => id === currentUser._id);
-    api.changeLikeProduct(product._id, isLiked).then((newCard) => {
+    // console.log(product);
+    const liked = isLiked(product.likes, currentUser._id);
+    api.changeLikeProduct(product._id, liked).then((newCard) => {
       const newCards = cards.map((card) => {
         return card._id === newCard._id ? newCard : card;
       });
@@ -81,12 +89,16 @@ function App() {
         </section>
 
         <section className="section__product">
-          <div className="product__container">
-            <CardList
-              cards={cards}
-              onProductLike={handleProductLike}
-              currentUser={currentUser}
-            />
+          <div className="product__container d-fl-col">
+            {isLoading ? (
+              <Spinner />
+            ) : (
+              <CardList
+                cards={cards}
+                onProductLike={handleProductLike}
+                currentUser={currentUser}
+              />
+            )}
           </div>
         </section>
       </main>
