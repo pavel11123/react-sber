@@ -1,6 +1,5 @@
 import "./Card.scss";
 import { ReactComponent as Save } from "../../assets/img/icon/favourite-card.svg";
-// import favourite from "../../assets/img/icon/favourite-card.svg";
 import Button from "../Button/Button";
 import { isLiked } from "../../utils/products";
 

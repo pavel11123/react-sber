@@ -81,14 +81,14 @@ function App() {
         <Logo />
         <Search onIunput={handleInputChange} onSubmit={handleFormSubmit} />
       </Header>
-      <main className="main">
+      <main className="main d-fl-col">
         <section className="section__search-info">
           <div className="search-info__container">
             <SearchInfo searchText={searchQuery} searchCount={cards.length} />
           </div>
         </section>
 
-        <section className="section__product">
+        <section className="section__product d-fl-col">
           <div className="product__container d-fl-col">
             {isLoading ? (
               <Spinner />

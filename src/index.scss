@@ -27,4 +27,6 @@
 
 .section__product {
   padding: rem(40) 0 rem(60) 0;
+  flex: 1 1 auto;
+  justify-content: center;
 }
