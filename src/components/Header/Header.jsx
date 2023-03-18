@@ -13,10 +13,10 @@ function Header({ user, updateUserHandle, children }) {
     <header className="header">
       <div className="header__container">
         {/* user?.name делаем проверку тоже самое что и user !== null, && - тоже самое что тернарный оператор*/}
-        {user?.name && <span>{user?.name}</span>}
+        {/* {user?.name && <span>{user?.name}</span>}
         {user?.email && <span>{user?.email}</span>}
 
-        <button onClick={handleClickButtonEdit}>Изменить</button>
+        <button onClick={handleClickButtonEdit}>Изменить</button> */}
         <div className="header__wrapper d-fl">
           {children}
           <div className="header__icon d-fl">
