@@ -1,14 +1,13 @@
 import { ReactComponent as Save } from "../../assets/img/icon/favourite-card.svg";
 import Button from "../Button/Button";
 import s from "./Product.module.scss";
-import { useEffect, useState } from "react";
 import star from "../../assets/img/icon/star.svg";
 import truck from "../../assets/img/icon/truck.svg";
 import quality from "../../assets/img/icon/quality.svg";
-// import productImg from "../../assets/img/photo/product1.png";
 import request from "../../assets/img/photo/request.png";
 import cn from "classnames";
 import { isLiked, createMarkup } from "../../utils/products";
+import { useNavigate, Link } from "react-router-dom";
 
 const Product = ({
   currentUser,
@@ -28,12 +27,13 @@ const Product = ({
     console.log(_id, likes);
   };
   const descriptionHtml = createMarkup(description);
+  const navigate = useNavigate();
 
   return (
     <>
       <div className="product__container">
         <div className={cn(s.header, "d-fl-col")}>
-          <a href="#">Назад</a>
+          <Link onClick={() => navigate(-1)}>Назад</Link>
           <h1 className={s.title}>{name}</h1>
           <div className={cn(s.header__info, "d-fl")}>
             <span className={s.header__article}>

@@ -4,21 +4,25 @@ import api from "../../../utils/api";
 import Spinner from "../../Spinner/Spinner";
 import { isLiked } from "../../../utils/products";
 import { useParams } from "react-router-dom";
+import NotFoundPage from "../../Page/NotFoundPage/NotFoundPage";
 
-const ProductPage = () => {
+const ProductPage = ({ currentUser }) => {
   const [product, setProduct] = useState([]);
-  const [currentUser, setCurrentUser] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [isError, setIsError] = useState(false);
   const { productId } = useParams();
 
   useEffect(() => {
     setIsLoading(true);
-    Promise.all([api.getUserInfo(), api.getProductId(productId)])
-      .then(([userData, productData]) => {
-        setCurrentUser(userData);
+    api
+      .getProductId(productId)
+      .then((productData) => {
         setProduct(productData);
       })
-      .catch((err) => console.error(err))
+      .catch((err) => {
+        console.error(err);
+        setIsError(true);
+      })
       .finally(() => {
         setIsLoading(false);
       });
@@ -39,12 +43,14 @@ const ProductPage = () => {
       <section className="d-fl section__product">
         {isLoading ? (
           <Spinner />
-        ) : (
+        ) : !isError ? (
           <Product
             {...product}
             currentUser={currentUser}
             onProductLike={handleProductLike}
           />
+        ) : (
+          <NotFoundPage />
         )}
       </section>
     </>

@@ -101,7 +101,10 @@ function App() {
               />
             }
           />
-          <Route path="/product/:productId" element={<ProductPage />} />
+          <Route
+            path="/product/:productId"
+            element={<ProductPage currentUser={currentUser} />}
+          />
         </Routes>
       </main>
 
