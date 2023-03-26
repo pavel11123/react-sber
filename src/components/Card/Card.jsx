@@ -2,6 +2,7 @@ import "./Card.scss";
 import { ReactComponent as Save } from "../../assets/img/icon/favourite-card.svg";
 import Button from "../Button/Button";
 import { isLiked } from "../../utils/products";
+import { Link } from "react-router-dom";
 
 const Card = ({
   name,
@@ -27,7 +28,7 @@ const Card = ({
   };
 
   return (
-    <div className="card d-fl-col">
+    <Link to={`/product/${_id}`} className="card d-fl-col">
       <span className={discount > 0 ? "card__discount" : "card__discount-none"}>
         -{discount}%
       </span>
@@ -54,7 +55,7 @@ const Card = ({
       </div>
 
       <Button />
-    </div>
+    </Link>
   );
 };
 export default Card;

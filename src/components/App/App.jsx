@@ -1,8 +1,8 @@
+import { Route, Routes } from "react-router-dom";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import Logo from "../Logo/Logo";
 import Search from "../Search/Search";
-import CardList from "../CardList/CardList";
 import SearchInfo from "../SearchInfo/SearchInfo";
 import { isLiked } from "../../utils/products";
 import "./App.scss";
@@ -10,10 +10,10 @@ import { useEffect, useState } from "react";
 // import data from "../../assets/data.json";
 import api from "../../utils/api";
 import useDebounce from "../../hooks/useDebounce";
-import Spinner from "../Spinner/Spinner";
+import CatalogPage from "../Page/CatalogPage/CatalogPage";
+import ProductPage from "../Page/ProductPage/ProductPage";
 
 function App() {
-  // const [cards, setCards] = useState(data);
   const [cards, setCards] = useState([]);
   const [currentUser, setCurrentUser] = useState(null);
   const [searchQuery, setsearchQuery] = useState("");
@@ -81,6 +81,7 @@ function App() {
         <Logo />
         <Search onIunput={handleInputChange} onSubmit={handleFormSubmit} />
       </Header>
+
       <main className="main d-fl-col">
         <section className="section__search-info">
           <div className="search-info__container">
@@ -88,20 +89,22 @@ function App() {
           </div>
         </section>
 
-        <section className="section__product d-fl-col">
-          <div className="product__container d-fl-col">
-            {isLoading ? (
-              <Spinner />
-            ) : (
-              <CardList
-                cards={cards}
-                onProductLike={handleProductLike}
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <CatalogPage
+                isLoading={isLoading}
+                handleProductLike={handleProductLike}
                 currentUser={currentUser}
+                cards={cards}
               />
-            )}
-          </div>
-        </section>
+            }
+          />
+          <Route path="/product/:productId" element={<ProductPage />} />
+        </Routes>
       </main>
+
       <Footer>
         <Logo />
       </Footer>

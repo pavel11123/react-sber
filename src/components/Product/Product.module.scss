@@ -1,5 +1,5 @@
-@import "../../scss/variables";
-@import "../../scss/mixins";
+@import "../scss/variables";
+@import "../scss/mixins";
 
 .header {
   gap: rem(5);
@@ -148,6 +148,7 @@
 .favourite__wrapper {
   gap: rem(8);
   align-items: center;
+  position: relative;
 }
 
 .product__favourite-text {
@@ -170,6 +171,20 @@
     object-fit: contain;
     fill: #ffffff;
     stroke: #7b8e98;
+  }
+
+  &_active {
+    // position: absolute;
+    // top: 0;
+    // right: 0;
+    z-index: 1;
+    width: rem(24);
+    height: rem(24);
+    cursor: pointer;
+
+    svg {
+      fill: #f44336;
+    }
   }
 }
 
