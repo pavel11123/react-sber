@@ -1,24 +1,29 @@
 {
   "files": {
-    "main.css": "/react-sber/static/css/main.c9e3630c.css",
-    "main.js": "/react-sber/static/js/main.883e6442.js",
-    "static/media/logoDog.svg": "/react-sber/static/media/logoDog.dbe97242d7f7c4f11494d2e62c67e332.svg",
-    "static/media/logo-instagram.svg": "/react-sber/static/media/logo-instagram.ee343c224c183f85022c39390295aaf3.svg",
-    "static/media/logo-viber.svg": "/react-sber/static/media/logo-viber.8790bba30363d7d297a7894549e53697.svg",
-    "static/media/profile.svg": "/react-sber/static/media/profile.2ed0d460573b23b9e4b950369c51bca3.svg",
-    "static/media/logo-whatsapp.svg": "/react-sber/static/media/logo-whatsapp.43d4e7f7fe93a6479dc83471b3d5d957.svg",
-    "static/media/logo-vk.svg": "/react-sber/static/media/logo-vk.10a8eaae72b1edd421b5bc7a6c31d978.svg",
-    "static/media/favourite.svg": "/react-sber/static/media/favourite.8afe51a3c0478c39f05c6dc2649cd60b.svg",
-    "static/media/favourite-card.svg": "/react-sber/static/media/favourite-card.68063a1b96413e04610d9c99074c907b.svg",
-    "static/media/cart.svg": "/react-sber/static/media/cart.36351405bb13de945ab1f9699d66d925.svg",
-    "static/media/logo-telegram.svg": "/react-sber/static/media/logo-telegram.2a2a4f305d11945d1b16707abed4074a.svg",
-    "static/media/search.svg": "/react-sber/static/media/search.3bf12e732cb7f2edfa13ee4b0ea3eeeb.svg",
-    "index.html": "/react-sber/index.html",
-    "main.c9e3630c.css.map": "/react-sber/static/css/main.c9e3630c.css.map",
-    "main.883e6442.js.map": "/react-sber/static/js/main.883e6442.js.map"
+    "main.css": "/static/css/main.23957b78.css",
+    "main.js": "/static/js/main.eafb7d45.js",
+    "static/media/request.png": "/static/media/request.16c7365740035c201e67.png",
+    "static/media/logoDog.svg": "/static/media/logoDog.dbe97242d7f7c4f11494d2e62c67e332.svg",
+    "static/media/quality.svg": "/static/media/quality.e427555d66de9cffedf17a232c2b4c5a.svg",
+    "static/media/star.svg": "/static/media/star.04f090d4afca33001ff6c4027fb8a37b.svg",
+    "static/media/logo-instagram.svg": "/static/media/logo-instagram.ee343c224c183f85022c39390295aaf3.svg",
+    "static/media/logo-viber.svg": "/static/media/logo-viber.8790bba30363d7d297a7894549e53697.svg",
+    "static/media/profile.svg": "/static/media/profile.2ed0d460573b23b9e4b950369c51bca3.svg",
+    "static/media/logo-whatsapp.svg": "/static/media/logo-whatsapp.43d4e7f7fe93a6479dc83471b3d5d957.svg",
+    "static/media/logo-vk.svg": "/static/media/logo-vk.10a8eaae72b1edd421b5bc7a6c31d978.svg",
+    "static/media/notfound.svg": "/static/media/notfound.2c252d16f18118d22833d1b995ba0234.svg",
+    "static/media/favourite.svg": "/static/media/favourite.8afe51a3c0478c39f05c6dc2649cd60b.svg",
+    "static/media/favourite-card.svg": "/static/media/favourite-card.68063a1b96413e04610d9c99074c907b.svg",
+    "static/media/truck.svg": "/static/media/truck.37abbeed55317aaed49873d8e1ac3351.svg",
+    "static/media/cart.svg": "/static/media/cart.36351405bb13de945ab1f9699d66d925.svg",
+    "static/media/logo-telegram.svg": "/static/media/logo-telegram.2a2a4f305d11945d1b16707abed4074a.svg",
+    "static/media/search.svg": "/static/media/search.3bf12e732cb7f2edfa13ee4b0ea3eeeb.svg",
+    "index.html": "/index.html",
+    "main.23957b78.css.map": "/static/css/main.23957b78.css.map",
+    "main.eafb7d45.js.map": "/static/js/main.eafb7d45.js.map"
   },
   "entrypoints": [
-    "static/css/main.c9e3630c.css",
-    "static/js/main.883e6442.js"
+    "static/css/main.23957b78.css",
+    "static/js/main.eafb7d45.js"
   ]
 }
