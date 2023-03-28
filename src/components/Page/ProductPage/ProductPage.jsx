@@ -1,16 +1,18 @@
 import Product from "../../Product/Product";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import api from "../../../utils/api";
 import Spinner from "../../Spinner/Spinner";
 import { isLiked } from "../../../utils/products";
 import { useParams } from "react-router-dom";
 import NotFoundPage from "../../Page/NotFoundPage/NotFoundPage";
+import { UserContext } from "../../../context/userContext";
 
-const ProductPage = ({ currentUser }) => {
+const ProductPage = () => {
   const [product, setProduct] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
   const { productId } = useParams();
+  const { user: currentUser } = useContext(UserContext);
 
   useEffect(() => {
     setIsLoading(true);
@@ -30,11 +32,8 @@ const ProductPage = ({ currentUser }) => {
 
   const handleProductLike = () => {
     const liked = isLiked(product.likes, currentUser._id);
-    api.changeLikeProduct(product._id, liked).then((newCard) => {
-      const newCards = product.map((product) => {
-        return product._id === newCard._id ? newCard : product;
-      });
-      setProduct(newCards);
+    api.changeLikeProduct(product._id, liked).then((updateCard) => {
+      setProduct(updateCard);
     });
   };
 
@@ -44,11 +43,7 @@ const ProductPage = ({ currentUser }) => {
         {isLoading ? (
           <Spinner />
         ) : !isError ? (
-          <Product
-            {...product}
-            currentUser={currentUser}
-            onProductLike={handleProductLike}
-          />
+          <Product {...product} onProductLike={handleProductLike} />
         ) : (
           <NotFoundPage />
         )}

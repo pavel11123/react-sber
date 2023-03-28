@@ -8,9 +8,10 @@ import request from "../../assets/img/photo/request.png";
 import cn from "classnames";
 import { isLiked, createMarkup } from "../../utils/products";
 import { useNavigate, Link } from "react-router-dom";
+import { useContext } from "react";
+import { UserContext } from "../../context/userContext";
 
 const Product = ({
-  currentUser,
   _id,
   onProductLike,
   name,
@@ -21,6 +22,7 @@ const Product = ({
   pictures,
   likes,
 }) => {
+  const { user: currentUser } = useContext(UserContext);
   const liked = isLiked(likes, currentUser?._id);
   const handleLikeClick = () => {
     onProductLike({ _id, likes });

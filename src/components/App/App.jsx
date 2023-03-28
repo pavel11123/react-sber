@@ -7,11 +7,12 @@ import SearchInfo from "../SearchInfo/SearchInfo";
 import { isLiked } from "../../utils/products";
 import "./App.scss";
 import { useEffect, useState } from "react";
-// import data from "../../assets/data.json";
 import api from "../../utils/api";
 import useDebounce from "../../hooks/useDebounce";
 import CatalogPage from "../Page/CatalogPage/CatalogPage";
 import ProductPage from "../Page/ProductPage/ProductPage";
+import NotFoundPage from "../Page/NotFoundPage/NotFoundPage";
+import { UserContext } from "../../context/userContext";
 
 function App() {
   const [cards, setCards] = useState([]);
@@ -76,7 +77,7 @@ function App() {
   };
 
   return (
-    <>
+    <UserContext.Provider value={{ user: currentUser, isLoading }}>
       <Header user={currentUser} updateUserHandle={handleUpdateUser}>
         <Logo />
         <Search onIunput={handleInputChange} onSubmit={handleFormSubmit} />
@@ -101,17 +102,15 @@ function App() {
               />
             }
           />
-          <Route
-            path="/product/:productId"
-            element={<ProductPage currentUser={currentUser} />}
-          />
+          <Route path="/product/:productId" element={<ProductPage />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>
 
       <Footer>
         <Logo />
       </Footer>
-    </>
+    </UserContext.Provider>
   );
 }
 
