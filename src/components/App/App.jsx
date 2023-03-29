@@ -13,6 +13,7 @@ import CatalogPage from "../Page/CatalogPage/CatalogPage";
 import ProductPage from "../Page/ProductPage/ProductPage";
 import NotFoundPage from "../Page/NotFoundPage/NotFoundPage";
 import { UserContext } from "../../context/userContext";
+import { CardContext } from "../../context/cardContext";
 
 function App() {
   const [cards, setCards] = useState([]);
@@ -78,38 +79,40 @@ function App() {
 
   return (
     <UserContext.Provider value={{ user: currentUser, isLoading }}>
-      <Header user={currentUser} updateUserHandle={handleUpdateUser}>
-        <Logo />
-        <Search onIunput={handleInputChange} onSubmit={handleFormSubmit} />
-      </Header>
+      <CardContext.Provider value={{ cards, handleLike: handleProductLike }}>
+        <Header user={currentUser} updateUserHandle={handleUpdateUser}>
+          <Logo />
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <Search
+                  onIunput={handleInputChange}
+                  onSubmit={handleFormSubmit}
+                />
+              }
+            ></Route>
+          </Routes>
+        </Header>
 
-      <main className="main d-fl-col">
-        <section className="section__search-info">
-          <div className="search-info__container">
-            <SearchInfo searchText={searchQuery} searchCount={cards.length} />
-          </div>
-        </section>
+        <main className="main d-fl-col">
+          <section className="section__search-info">
+            <div className="search-info__container">
+              <SearchInfo searchText={searchQuery} searchCount={cards.length} />
+            </div>
+          </section>
 
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <CatalogPage
-                isLoading={isLoading}
-                handleProductLike={handleProductLike}
-                currentUser={currentUser}
-                cards={cards}
-              />
-            }
-          />
-          <Route path="/product/:productId" element={<ProductPage />} />
-          <Route path="*" element={<NotFoundPage />} />
-        </Routes>
-      </main>
+          <Routes>
+            <Route path="/" element={<CatalogPage />} />
+            <Route path="/product/:productId" element={<ProductPage />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+        </main>
 
-      <Footer>
-        <Logo />
-      </Footer>
+        <Footer>
+          <Logo />
+        </Footer>
+      </CardContext.Provider>
     </UserContext.Provider>
   );
 }

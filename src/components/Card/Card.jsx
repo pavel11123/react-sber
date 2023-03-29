@@ -24,7 +24,6 @@ const Card = ({
   const liked = isLiked(likes, currentUser?._id);
   const handleLikeClick = () => {
     onProductLike({ _id, likes });
-    console.log(_id, likes);
   };
 
   return (

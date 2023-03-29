@@ -2,21 +2,15 @@ import React from "react";
 import Spinner from "../../Spinner/Spinner";
 import CardList from "../../CardList/CardList";
 import s from "./CatalogPage.module.scss";
-import { useEffect, useState } from "react";
+import { useContext } from "react";
+import { UserContext } from "../../../context/userContext";
 
-const CatalogPage = ({ isLoading, cards, handleProductLike, currentUser }) => {
+const CatalogPage = () => {
+  const { isLoading } = useContext(UserContext);
   return (
     <section className="section__product d-fl-col">
       <div className="product__container d-fl-col">
-        {isLoading ? (
-          <Spinner />
-        ) : (
-          <CardList
-            cards={cards}
-            onProductLike={handleProductLike}
-            currentUser={currentUser}
-          />
-        )}
+        {isLoading ? <Spinner /> : <CardList />}
       </div>
     </section>
   );

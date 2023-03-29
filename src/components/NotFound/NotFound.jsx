@@ -13,7 +13,7 @@ const NotFound = () => {
         </div>
 
         <p className={s.subtitle}>
-          Простите, по вашему запросу <br /> товаров не надено.
+          Простите, по вашему запросу <br /> ничего не надено.
         </p>
 
         <Link className={s.link__home} to="/">
